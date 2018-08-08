@@ -7,9 +7,11 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body style="color:#333;background-color:#eee">
-<iframe frameBorder="0" src="https://adaptly.looker.com/embed/dashboards/8" width="300" height="500" ></iframe>
+<iframe frameBorder="0" src="https://adaptly.looker.com/embed/dashboards/8" width="500" height="500" ></iframe>
 
-<iframe frameBorder="0" src="https://adaptly.looker.com/embed/dashboards/9"   width="300" height="500" ></iframe>
+
+<iframe id = "second_iframe"  frameBorder="0" src="" width="500" height="500" ></iframe>
+
 
 
 
@@ -17,7 +19,8 @@
 window.addEventListener('hashchange',function(event){
 		var creative_id = getHashObj()
 		console.log(creative_id)
-		window.open("https://adaptly.looker.com/embed/dashboards/9/?Creative%20ID="+getHashObj.creative_id)
+		var iframeurl = "https://adaptly.looker.com/embed/dashboards/9" 
+		document.getElementById("second_iframe").src = iframeurl;
 	})
 
 function getHashObj(){
