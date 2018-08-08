@@ -9,7 +9,7 @@
 <body style="color:#333;background-color:#eee">
 <iframe frameBorder="0" src="https://adaptly.looker.com/embed/dashboards/8" width="80%" height="800" ></iframe>
 
-<iframe frameBorder="0" src="https://www.google.com/search?&q=test" width="20%" height="800" ></iframe>
+<iframe frameBorder="0" src="https://www.google.com/search?&q=test"   width="20%" height="800" ></iframe>
 
 
 
@@ -17,7 +17,7 @@
 window.addEventListener('hashchange',function(event){
 		var creative_id = getHashObj()
 		console.log(creative_id)
-		window.open("https://google.com/"+object.creative_id)
+		window.open("https://google.com/"+getHashObj.creative_id)
 	})
 
 function getHashObj(){
