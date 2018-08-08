@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" /> 
+	<title>Adaptly Dashboard Test</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body style="color:#333;background-color:#eee">
+<iframe frameBorder="0" src="https://adaptly.looker.com/embed/dashboards/7" width="80%" height="800" ></iframe>
+
+
+<script>
+window.addEventListener('hashchange',function(event){
+		var hashVal = getHashObj()
+		console.log(hashVal)
+		window.open("https://addomain/"+hashVal.adId)
+	})
+
+function getHashObj(){
+		return (location.hash
+				.slice(1)
+				.split('&')
+				.filter(Boolean)
+				.map(ss=>ss.replace(/^\//,"route="))
+				.map(ss=>ss.split('='))
+				.reduce((aa,a)=>({[decodeURIComponent(a[0])]:decodeURIComponent(a.slice(1).join('=')), ...aa}),{})
+			);
+	}
+</script>
+</html>
