@@ -10,7 +10,7 @@
 <iframe frameBorder="0" src="https://adaptly.looker.com/embed/dashboards/8" width="500" height="500" ></iframe>
 
 
-<iframe id = "second_iframe" src="https://adaptly.looker.com/embed/dashboards/9" frameBorder="0" src="" width="500" height="500" ></iframe>
+<iframe id = "second_iframe" src="" frameBorder="0" src="" width="500" height="500" ></iframe>
 
 
 
@@ -20,25 +20,10 @@ window.addEventListener('hashchange',function(event){
 		var hash_value = getHashObj()
 		console.log(hash_value)
 		var iframeurl = "https://adaptly.looker.com/embed/dashboards/9" 
-		//document.getElementById("second_iframe").src = iframeurl + "?Creative%20ID=" + hash_value;	
+		document.getElementById("second_iframe").src = iframeurl + "?Creative%20ID=" + hash_value;	
 
-		document.getElementById("second_iframe").contentWindow.postMessage(JSON.stringify({
-			type:"dashboard:filters:update",
-			filters:{
-				"Creative ID": "23842902992750394"
-			}
-		}),"https://adaptly.looker.com");
-
-		document.getElementById("second_iframe").contentWindow.postMessage(JSON.stringify({
-			type: "dashboard:run"
-		}),"https://adaptly.looker.com");
+		
 	})
-
-
-
-
-
-
 
 function getHashObj(){
 		return (location.hash
