@@ -26,6 +26,7 @@ window.addEventListener('hashchange',function(event){
 function getHashObj(){
 		return (location.hash
 				.slice(1)
+				.split('&')
 				.filter(Boolean)
 				.map(ss=>ss.replace(/^\//,"route="))
 				.map(ss=>ss.split('='))
