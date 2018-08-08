@@ -22,14 +22,14 @@ window.addEventListener('hashchange',function(event){
 		var iframeurl = "https://adaptly.looker.com/embed/dashboards/9" 
 		//document.getElementById("second_iframe").src = iframeurl + "?Creative%20ID=" + hash_value;	
 
-		second_iframe.contentWindow.postMessage(JSON.stringify({
+		document.getElementById("second_iframe").contentWindow.postMessage(JSON.stringify({
 			type:"dashboard:filters:update",
 			filters:{
 				"Creative ID": "23842902992750394"
 			}
 		}),"https://adaptly.looker.com");
 
-		second_iframe.contentWindow.postMessage(JSON.stringify({
+		document.getElementById("second_iframe").contentWindow.postMessage(JSON.stringify({
 			type: "dashboard:run"
 		}),"https://adaptly.looker.com");
 	})
