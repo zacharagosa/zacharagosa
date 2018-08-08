@@ -28,7 +28,7 @@ window.addEventListener('hashchange',function(event){
 		listening_iframe.contentWindow.postMessage(JSON.stringify({
             type:"dashboard:filters:update",
             filters:{
-                "Creative ID": "23842902992750394"
+                "Creative ID": hash_value
             }
         }),"https://adaptly.looker.com");
 
