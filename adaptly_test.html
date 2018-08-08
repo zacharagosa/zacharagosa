@@ -20,8 +20,25 @@ window.addEventListener('hashchange',function(event){
 		var hash_value = getHashObj()
 		console.log(hash_value)
 		var iframeurl = "https://adaptly.looker.com/embed/dashboards/9" 
-		document.getElementById("second_iframe").src = iframeurl + "?Creative%20ID=" + hash_value;
+		document.getElementById("second_iframe").src = iframeurl + "?Creative%20ID=" + hash_value;	
+
+		second_iframe.contentWindow.postMessage(JSON.stringify({
+			type:"dashboard:filters:update",
+			filters:{
+				"Creative ID": hash_value
+			}
+		}),"https://adaptly.looker.com");
+
+		second_iframe.contentWindow.postMessage(JSON.stringify({
+			type: "dashboard:run"
+		}),"https://adaptly.looker.com");
 	})
+
+
+
+
+
+
 
 function getHashObj(){
 		return (location.hash
