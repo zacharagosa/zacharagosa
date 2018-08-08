@@ -20,7 +20,7 @@ window.addEventListener('hashchange',function(event){
 		var creative_id = getHashObj()
 		console.log(creative_id)
 		var iframeurl = "https://adaptly.looker.com/embed/dashboards/9" 
-		document.getElementById("second_iframe").src = iframeurl;
+		document.getElementById("second_iframe").src = iframeurl + "/?Creative%20ID=" + creative_id;
 	})
 
 function getHashObj(){
