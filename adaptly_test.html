@@ -17,20 +17,14 @@
 
 <script>
 window.addEventListener('hashchange',function(event){
-		var creative_id = getHashObj()
+		var hash_value = getHashObj()
 		console.log(creative_id)
 		var iframeurl = "https://adaptly.looker.com/embed/dashboards/9" 
-		document.getElementById("second_iframe").src = iframeurl + "/?Creative%20ID=" + creative_id;
+		document.getElementById("second_iframe").src = iframeurl + "/?Creative%20ID=" + hash_value.creative_id;
 	})
 
 function getHashObj(){
 		return (location.hash
-				.slice(1)
-				.split('&')
-				.filter(Boolean)
-				.map(ss=>ss.replace(/^\//,"route="))
-				.map(ss=>ss.split('='))
-				.reduce((aa,a)=>({[decodeURIComponent(a[0])]:decodeURIComponent(a.slice(1).join('=')), ...aa}),{})
 			);
 	}
 </script>
